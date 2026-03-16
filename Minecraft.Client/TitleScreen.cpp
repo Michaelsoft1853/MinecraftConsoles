@@ -18,7 +18,7 @@ TitleScreen::TitleScreen()
 {
 	// 4J - added initialisers
 	vo = 0;
-	multiplayerButton = nullptr;
+	multiplayerButton = NULL;
 
     splash = L"missingno";
 //    try {	// 4J - removed try/catch
@@ -93,7 +93,7 @@ void TitleScreen::init()
         buttons.push_back(new Button(4, width / 2 + 2, topPos + spacing * 3 + 12, 98, 20, language->getElement(L"menu.quit")));
     }
 
-    if (minecraft->user == nullptr)
+    if (minecraft->user == NULL)
 	{
         multiplayerButton->active = false;
     }
@@ -151,7 +151,6 @@ void TitleScreen::render(int xm, int ym, float a)
     drawCenteredString(font, splash, 0, -8, 0xffff00);
     glPopMatrix();
 
-    drawString(font, ClientConstants::VERSION_STRING, 2, 2, 0x505050);
     wstring msg = L"Copyright Mojang AB. Do not distribute.";
     drawString(font, msg, width - font->width(msg) - 2, height - 10, 0xffffff);
 
